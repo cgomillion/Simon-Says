@@ -5,7 +5,7 @@ body {
 .panel {
     width: 150px;
     height: 150px;
-    
+    display: inline-block;
 }
 
 .red {
