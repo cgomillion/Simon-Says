@@ -1,0 +1,33 @@
+body {
+    background-color: pink;
+}
+
+.panel {
+    width: 150px;
+    height: 150px;
+    
+}
+
+.red {
+    background-color: red;
+    border-bottom-left-radius: 250px;
+    
+}
+
+.blue {
+    background-color: blue;
+    border-top-left-radius: 250px;
+    
+}
+
+.yellow {
+    background-color: yellow;
+    border-bottom-right-radius: 250px;
+   
+}
+
+.green {
+    background-color: green;
+    border-top-right-radius: 250px;
+    
+}
