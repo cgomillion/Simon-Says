@@ -1,5 +1,5 @@
 body {
-    background-color: pink;
+    background-color: teal;
 }
 
 .game-container {
@@ -26,26 +26,52 @@ body {
     
 }
 
+.active {
+    background-color: grey;
+}
+
 .red {
     background-color: red;
     border-bottom-left-radius: 250px;
+    cursor: pointer;
     
 }
 
 .blue {
     background-color: blue;
     border-top-left-radius: 250px;
+    cursor: pointer;
     
 }
 
 .yellow {
     background-color: yellow;
     border-bottom-right-radius: 250px;
+    cursor: pointer;
    
 }
 
 .green {
     background-color: green;
     border-top-right-radius: 250px;
+    cursor: pointer;
     
+}
+
+.count {
+    text-align: center;
+    margin-left: 50px;
+}
+
+.score {
+    text-align: center;
+    margin-left: 50px;
+}
+
+.startButton {
+    margin-left: 53px;
+}
+
+.title {
+    margin-left: 17px;
 }
