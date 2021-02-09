@@ -7,71 +7,124 @@ body {
 }
 
 .board {
-    background-color: black;   
+    background: #385a94;
+    border-radius: 50%;
+    height: 500px;
+    width: 500px;
+    position: relative;
+    border-style: solid;
+    border-width: 10px;
+    margin: auto;
+    margin-top: 60px;  
 }
 
 .score-board {
-    border-radius: 100%;
-    background-color: silver;
-    height: 150px;
-    width: 150px;
-    margin-top: 125px;
-}
+    position: absolute;
+    background: silver;
+    border-radius: 50%;
+    height: 250px;
+    width: 250px;
+    border-style: solid;
+    border-width: 10px;
+    top: 50%;
+    left: 50%;
+    margin: -125px 0px 0px -125px;
+    box-sizing: border-box;
+    cursor: pointer;
+ }
 
-.panel {
-    width: 150px;
-    height: 150px;
-    display: inline-block;
-    position: relative;
-    
-}
 
 .active {
     background-color: grey;
 }
 
-.red {
-    background-color: red;
-    border-bottom-left-radius: 250px;
+.bottom-left-red {
+    position: absolute;
+    height: 250px;
+    width: 250px;
+    border-radius: 0 0 0 250px;
+    background: darkred;
+    top: 50%;
+    left: 50%;
+    margin: 0px -250px 0px -250px;
+    border-style: solid;
+    border-width: 5px;
+    box-sizing: border-box;
     cursor: pointer;
     
 }
 
-.blue {
-    background-color: blue;
-    border-top-left-radius: 250px;
+.top-left-blue {
+    position: absolute;
+    height: 250px;
+    width: 250px;
+    border-radius: 250px 0 0 0;
+    background: darkblue;
+    top: 50%;
+    left: 50%;
+    margin: -250px 0px 0px -250px;
+    border-style: solid;
+    border-width: 5px;
+    box-sizing: border-box;
     cursor: pointer;
     
 }
 
-.yellow {
-    background-color: yellow;
-    border-bottom-right-radius: 250px;
+.bottom-right-yellow {
+    position: absolute;
+    height: 250px;
+    width: 250px;
+    border-radius: 0 0 250px 0;
+    background: goldenrod;
+    top: 50%;
+    left: 50%;
+    margin: 0px 0px -250px 0px;
+    border-style: solid;
+    border-width: 5px;
+    box-sizing: border-box;
     cursor: pointer;
    
 }
 
-.green {
-    background-color: green;
-    border-top-right-radius: 250px;
+.top-right-green {
+    position: absolute;
+    height: 250px;
+    width: 250px;
+    border-radius: 0 250px 0 0;
+    background: darkgreen;
+    top: 50%;
+    left: 50%;
+    margin: -250px 0px 0px 0px;
+    border-style: solid;
+    border-width: 5px;
+    box-sizing: border-box;
     cursor: pointer;
     
 }
 
 .count {
-    text-align: center;
-    margin-left: 50px;
+    margin-left: 88px;
+    margin-top: 110px;
 }
 
 .score {
-    text-align: center;
-    margin-left: 50px;
+    margin-left: 88px;
+    margin-top: 110px;
 }
 
 .startButton {
-    margin-left: 53px;
+    border-radius: 50%;
+    font-size: 1.5em;
+    background-color: lightgray;
+    cursor: pointer;
+    margin-left: 80px;
+    margin-top: 110px;
 }
 
 .title {
-    margin-left: 17px;
+    position: absolute;
+    font-size: 30px;
+    margin-left: 40px;
+    margin-top: 40px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }

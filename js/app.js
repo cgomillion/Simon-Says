@@ -12,7 +12,7 @@ let colors = [$('.blue'), $('.green'), $('.red'), $('.yellow')]
     console.log('clicked registered') 
     userLevel++
     $('.count').text(`Level : ${userLevel}`)
-    for (let i = 0; i <= userLevel; i++) {
+    // for (let i = 0; i <= userLevel; i++) {
     let randomNum = Math.floor(Math.random * 4)
         let simonColor = []
         simonColor.push(colors[randomNum])
@@ -20,15 +20,15 @@ let colors = [$('.blue'), $('.green'), $('.red'), $('.yellow')]
         // need a function to turn the colors grey, then turn back
         
         let logSimon = () => {
-            $(simonColor[i]).addClass('.active')
+            $(simonColor).addClass('.active')
             setTimeout(() => {
 
             },500)
-            $(simonColor[i]).removeClass('.active')
+            $(simonColor).removeClass('.active')
         }
         // need a function to log the users input
         logSimon()
-    }   
+    // }   
 })
     // needs to start on the click of the Start button, => .startButton
     // $(".startButton").click( () => {
