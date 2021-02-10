@@ -91,12 +91,21 @@ function clearBoard() {
     $topLeftBlue.css('background-color', 'darkblue');
 }
 
+// function for winning game board
+
+function winnersBoard() {
+    $bottomRightYellow.css('background-color', 'yellow');
+    $bottomLeftRed.css('background-color', 'lightcoral');
+    $topRightGreen.css('background-color', 'lightgreen');
+    $topLeftBlue.css('background-color', 'lightblue');
+}
+
 // event listeners w/jquery to log user clicks
 
 $($topLeftBlue).click(() => {
     if (on) {
       userInput.push(1);
-    //   check();
+      checkMatch();
       oneBlue();
       if(!winner) {
         setTimeout(() => {
@@ -109,7 +118,7 @@ $($topLeftBlue).click(() => {
 $($topRightGreen).click(() => {
     if (on) {
       userInput.push(2);
-    //   check();
+      checkMatch();
       twoGreen();
       if(!winner) {
         setTimeout(() => {
@@ -122,7 +131,7 @@ $($topRightGreen).click(() => {
 $($bottomLeftRed).click(() => {
     if (on) {
       userInput.push(3);
-    //   check();
+      checkMatch();
       threeRed();
       if(!winner) {
         setTimeout(() => {
@@ -136,7 +145,7 @@ $($bottomLeftRed).click(() => {
 $($bottomRightYellow).click(() => {
     if (on) {
       userInput.push(4);
-    //   check();
+      checkMatch();
       fourYellow();
       if(!winner) {
         setTimeout(() => {
@@ -152,7 +161,7 @@ function checkMatch() {
     if (userInput[userInput.length - 1] !== simonInput[userInput.length - 1])
     correct = false;
 
-    if (userInput.length === 5 && correct) {
+    if (userInput.length === 20 && correct) {
         winGame();
     }
 
@@ -160,7 +169,21 @@ function checkMatch() {
         $levelCounter.text(`Level : GAME OVER`);
     }
 
-    
+    if (userLevel === userInput.length && correct && !winner) {
+        userLevel++;
+        userInput = [];
+        simonTurn = true;
+        flashAction = 0;
+        $levelCounter.text(`Level : ${userLevel}`);
+        interval = setInterval(gameLevel, 800);
+      }
+}
+
+function winGame() {
+    winnersBoard();
+    $levelCounter.text(`WINNER`);
+    on = false;
+    winner = true;
 }
 
 
