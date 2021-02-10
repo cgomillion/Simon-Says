@@ -18,7 +18,7 @@ let on = true;
 const $levelCounter = $('.count');
 const $topLeftBlue = $('.top-left-blue');
 const $topRightGreen = $('.top-right-green');
-const $bottomLeftRed = $('bottom-left-red');
+const $bottomLeftRed = $('.bottom-left-red');
 const $bottomRightYellow = $('.bottom-right-yellow');
 const $startButton = $('.startButton');
 
@@ -64,6 +64,8 @@ function gameLevel() {
     }
 }
 
+//functions for panels changing lighting up
+
 function oneBlue() {
     $topLeftBlue.css('background-color', 'lightblue')
 }
@@ -73,12 +75,14 @@ function twoGreen() {
 }
 
 function threeRed() {
-    $bottomLeftRed.css('background-color', 'tomato')
+    $bottomLeftRed.css('background-color', 'lightcoral')
 }
 
 function fourYellow() {
     $bottomRightYellow.css('background-color', 'yellow')
 }
+
+// function to rest board
 
 function clearBoard() {
     $bottomRightYellow.css('background-color', 'goldenrod');
@@ -86,6 +90,8 @@ function clearBoard() {
     $topRightGreen.css('background-color', 'darkgreen');
     $topLeftBlue.css('background-color', 'darkblue');
 }
+
+// event listeners w/jquery to log user clicks
 
 $($topLeftBlue).click(() => {
     if (on) {
@@ -139,6 +145,23 @@ $($bottomRightYellow).click(() => {
       }
     }
   })
+
+// function to check if user input is correct
+
+function checkMatch() {
+    if (userInput[userInput.length - 1] !== simonInput[userInput.length - 1])
+    correct = false;
+
+    if (userInput.length === 5 && correct) {
+        winGame();
+    }
+
+    if (correct === false) {
+        $levelCounter.text(`Level : GAME OVER`);
+    }
+
+    
+}
 
 
 $($startButton).click(() => {
