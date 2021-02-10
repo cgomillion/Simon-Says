@@ -10,3 +10,14 @@ Simon Says:
     d. As a USER when I 'hit' the wrong color I should hear a buzz noise
     e. As a USER I should be able to see the total number of correct hits
     f. The USER clicks 'New Game' button to reset scores and game 
+
+MVP:
+~~~~ MVP ~~~~
+One player
+Display level stats 
+2 level challenges
+~~~~ Stretch Goals ~~~~
+Two players
+Display both players scores
+Timer
+sounds
