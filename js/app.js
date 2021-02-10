@@ -161,7 +161,7 @@ function checkMatch() {
     if (userInput[userInput.length - 1] !== simonInput[userInput.length - 1])
     correct = false;
 
-    if (userInput.length === 20 && correct) {
+    if (userInput.length === 6 && correct) {
         winGame();
     }
 
