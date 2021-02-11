@@ -37,7 +37,7 @@ function playGame() {
     for (let i = 0; i < 20; i++) {
         simonInput.push(Math.floor(Math.random() * 4) + 1);
     }
-    console.log(simonInput)
+    console.log(simonInput);
     simonTurn = true;
     interval = setInterval(gameLevel, 800);
 }

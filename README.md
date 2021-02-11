@@ -21,3 +21,9 @@ Two players
 Display both players scores
 Timer
 sounds
+
+
+
+Link to Simon Says:
+
+file:///C:/Users/cgomi/projects/Simon-Says/index.html
