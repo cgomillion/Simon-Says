@@ -27,3 +27,5 @@ sounds
 Link to Simon Says:
 
 file:///C:/Users/cgomi/projects/Simon-Says/index.html
+
+https://cgomillion.github.io/Simon-Says/
