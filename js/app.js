@@ -14,8 +14,10 @@ let simonTurn;
 let winner;
 let interval;
 let on = true;
+let score = 0;
 
 const $levelCounter = $('.count');
+const $score = $('.score');
 const $topLeftBlue = $('.top-left-blue');
 const $topRightGreen = $('.top-right-green');
 const $bottomLeftRed = $('.bottom-left-red');
@@ -30,7 +32,9 @@ function playGame() {
     flashAction = 0;
     interval = 0;
     userLevel = 1;
+    score = 0;
     $levelCounter.text(`Level : ${userLevel}`);
+    $score.text(`Score: ${score}`);
     console.log(userLevel);
     correct = true;
 
@@ -107,6 +111,8 @@ $($topLeftBlue).click(() => {
       userInput.push(1);
       checkMatch();
       oneBlue();
+      score++;
+      $score.text(`Score: ${score}`);
       if(!winner) {
         setTimeout(() => {
           clearBoard();
@@ -120,6 +126,8 @@ $($topRightGreen).click(() => {
       userInput.push(2);
       checkMatch();
       twoGreen();
+      score++;
+      $score.text(`Score: ${score}`);
       if(!winner) {
         setTimeout(() => {
           clearBoard();
@@ -133,6 +141,8 @@ $($bottomLeftRed).click(() => {
       userInput.push(3);
       checkMatch();
       threeRed();
+      score++;
+      $score.text(`Score: ${score}`);
       if(!winner) {
         setTimeout(() => {
           clearBoard();
@@ -147,6 +157,8 @@ $($bottomRightYellow).click(() => {
       userInput.push(4);
       checkMatch();
       fourYellow();
+      score++;
+      $score.text(`Score: ${score}`);
       if(!winner) {
         setTimeout(() => {
           clearBoard();
@@ -161,7 +173,7 @@ function checkMatch() {
     if (userInput[userInput.length - 1] !== simonInput[userInput.length - 1])
     correct = false;
 
-    if (userInput.length === 6 && correct) {
+    if (userInput.length === 6 && correct && score > 20) {
         winGame();
     }
 
@@ -176,6 +188,7 @@ function checkMatch() {
         simonTurn = true;
         flashAction = 0;
         $levelCounter.text(`Level : ${userLevel}`);
+        $score.text(`Score: ${score}`);
         interval = setInterval(gameLevel, 800);
       }
 }
@@ -183,6 +196,9 @@ function checkMatch() {
 function winGame() {
     winnersBoard();
     $levelCounter.text(`WINNER`);
+    $score.css('margin-left', '85px');
+    $levelCounter.css('margin-left', '66px');
+
     on = false;
     winner = true;
 }
