@@ -166,7 +166,8 @@ function checkMatch() {
     }
 
     if (correct === false) {
-        $levelCounter.text(`Level : GAME OVER`);
+        $levelCounter.text(`GAME OVER`);
+        $levelCounter.css('margin-left', '66px');
     }
 
     if (userLevel === userInput.length && correct && !winner) {
