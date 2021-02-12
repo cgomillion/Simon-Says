@@ -173,7 +173,7 @@ function checkMatch() {
     if (userInput[userInput.length - 1] !== simonInput[userInput.length - 1])
     correct = false;
 
-    if (userInput.length === 6 && correct && score > 20) {
+    if (userInput.length === 6 && correct && score >= 15) {
         winGame();
     }
 
@@ -197,7 +197,7 @@ function winGame() {
     winnersBoard();
     $levelCounter.text(`WINNER`);
     $score.css('margin-left', '85px');
-    $levelCounter.css('margin-left', '66px');
+    $levelCounter.css('margin-left', '83px');
 
     on = false;
     winner = true;
