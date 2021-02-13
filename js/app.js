@@ -13,7 +13,7 @@ let correct;
 let simonTurn;
 let winner;
 let interval;
-let boardActive = true;
+let on = true;
 let score = 0;
 
 // accessing html elements with jQuery
@@ -53,7 +53,7 @@ function playGame() {
 function gameLevel() {
   // turn the board off so simon can go first then the user. only accepts user click when board is active.
 
-  boardActive = false; 
+  on = false; 
 
   // user input for a game level
 
@@ -61,7 +61,7 @@ function gameLevel() {
         clearInterval(interval);
         simonTurn = false;
         clearBoard();
-        boardActive = true;
+        on = true;
     }
 
     // simons turn , simons moves are made at the start of the index.html ref. line 43 . Simon starts with the first item in his array of inputs and at the end of each of his turns, it increments to the next index.
@@ -117,7 +117,7 @@ function winnersBoard() {
 // event listeners w/jquery to log user clicks
 
 $($topLeftBlue).click(() => {
-    if (boardActive) {
+    if (on) {
       userInput.push(1);
       checkMatch();
       oneBlue();
@@ -132,7 +132,7 @@ $($topLeftBlue).click(() => {
   })
 
 $($topRightGreen).click(() => {
-    if (boardActive) {
+    if (on) {
       userInput.push(2);
       checkMatch();
       twoGreen();
@@ -147,7 +147,7 @@ $($topRightGreen).click(() => {
   })
 
 $($bottomLeftRed).click(() => {
-    if (boardActive) {
+    if (on) {
       userInput.push(3);
       checkMatch();
       threeRed();
@@ -163,7 +163,7 @@ $($bottomLeftRed).click(() => {
 
 
 $($bottomRightYellow).click(() => {
-    if (boardActive) {
+    if (on) {
       userInput.push(4);
       checkMatch();
       fourYellow();
@@ -217,14 +217,14 @@ function winGame() {
     $score.css('margin-left', '85px');
     $levelCounter.css('margin-left', '83px');
 
-    boardActive = false;
+    on = false;
     winner = true;
 }
 
 // on the click of the start button you begin the game
 
 $($startButton).click(() => {
-    if (boardActive || winner) {
+    if (on|| winner) {
     playGame();
     }
 })
