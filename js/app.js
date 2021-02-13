@@ -4,7 +4,7 @@ console.log('Testing console')
 // reference video : 
 // Simon Game JavaScript Tutorial for Beginners
 // https://www.youtube.com/watch?v=n_ec3eowFLQ&t=147s
-// need variables for my moves, simons moves, the flashing of the panels, boolean if it is correct, boolean if you are a winner, and setting a variable to the interval.
+// need variables for my moves, simons moves, the flashing of the panels, boolean if it is correct, boolean if you are a winner, setting a variable to the interval, 
 let userLevel = 0;
 let userInput = [];
 let simonInput = [];
@@ -13,8 +13,10 @@ let correct;
 let simonTurn;
 let winner;
 let interval;
-let on = true;
+let boardActive = true;
 let score = 0;
+
+// accessing html elements with jQuery
 
 const $levelCounter = $('.count');
 const $score = $('.score');
@@ -46,15 +48,23 @@ function playGame() {
     interval = setInterval(gameLevel, 800);
 }
 
+// function for one game level
+
 function gameLevel() {
-    on = false; 
+  // turn the board off so simon can go first then the user. only accepts user click when board is active.
+
+  boardActive = false; 
+
+  // user input for a game level
 
     if (flashAction === userLevel) {
         clearInterval(interval);
         simonTurn = false;
         clearBoard();
-        on = true;
+        boardActive = true;
     }
+
+    // simons turn , simons moves are made at the start of the index.html ref. line 43 . Simon starts with the first item in his array of inputs and at the end of each of his turns, it increments to the next index.
 
     if (simonTurn === true) {
         clearBoard();
@@ -173,14 +183,20 @@ function checkMatch() {
     if (userInput[userInput.length - 1] !== simonInput[userInput.length - 1])
     correct = false;
 
+    // win condition
+
     if (userInput.length === 6 && correct && score >= 15) {
         winGame();
     }
+
+    // lose condition
 
     if (correct === false) {
         $levelCounter.text(`GAME OVER`);
         $levelCounter.css('margin-left', '66px');
     }
+
+    // if you correctly complete the round but don't meet the win condition yet
 
     if (userLevel === userInput.length && correct && !winner) {
         userLevel++;
@@ -193,6 +209,8 @@ function checkMatch() {
       }
 }
 
+// winGame function 
+
 function winGame() {
     winnersBoard();
     $levelCounter.text(`WINNER`);
@@ -203,6 +221,7 @@ function winGame() {
     winner = true;
 }
 
+// on the click of the start button you begin the game
 
 $($startButton).click(() => {
     if (on || winner) {
