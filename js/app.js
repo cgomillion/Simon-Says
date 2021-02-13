@@ -4,11 +4,7 @@ console.log('Testing console')
 // reference video : 
 // Simon Game JavaScript Tutorial for Beginners
 // https://www.youtube.com/watch?v=n_ec3eowFLQ&t=147s
-<<<<<<< HEAD
 // need variables for my moves, simons moves, the flashing of the panels, boolean if it is correct, boolean if you are a winner, setting a variable to the interval, if the board is on (the user can only input when the board is on/active), and for the score starting at 0.
-=======
-// need variables for my moves, simons moves, the flashing of the panels, boolean if it is correct, boolean if you are a winner, setting a variable to the interval, if the board is on/active (the user can only input when the board is on/active.), and for the score starting at 0.
->>>>>>> main
 let userLevel = 0;
 let userInput = [];
 let simonInput = [];
