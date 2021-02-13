@@ -117,7 +117,7 @@ function winnersBoard() {
 // event listeners w/jquery to log user clicks
 
 $($topLeftBlue).click(() => {
-    if (on) {
+    if (boardActive) {
       userInput.push(1);
       checkMatch();
       oneBlue();
@@ -132,7 +132,7 @@ $($topLeftBlue).click(() => {
   })
 
 $($topRightGreen).click(() => {
-    if (on) {
+    if (boardActive) {
       userInput.push(2);
       checkMatch();
       twoGreen();
@@ -147,7 +147,7 @@ $($topRightGreen).click(() => {
   })
 
 $($bottomLeftRed).click(() => {
-    if (on) {
+    if (boardActive) {
       userInput.push(3);
       checkMatch();
       threeRed();
@@ -163,7 +163,7 @@ $($bottomLeftRed).click(() => {
 
 
 $($bottomRightYellow).click(() => {
-    if (on) {
+    if (boardActive) {
       userInput.push(4);
       checkMatch();
       fourYellow();
@@ -217,77 +217,18 @@ function winGame() {
     $score.css('margin-left', '85px');
     $levelCounter.css('margin-left', '83px');
 
-    on = false;
+    boardActive = false;
     winner = true;
 }
 
 // on the click of the start button you begin the game
 
 $($startButton).click(() => {
-    if (on || winner) {
+    if (boardActive || winner) {
     playGame();
     }
 })
 
 
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//  // goint to try and use jquery
-//     // need a function to get random (Simons) colors, increments with level to start.
-//     $(".startButton").click( () => {
-//     console.log('clicked registered') 
-//     userLevel++
-//     $('.count').text(`Level : ${userLevel}`)
-//     // for (let i = 0; i <= userLevel; i++) {
-//     let randomNum = Math.floor(Math.random * 4)
-//         let simonColor = []
-//         simonColor.push(colors[randomNum])
-
-//         // need a function to turn the colors grey, then turn back
-        
-//         let logSimon = () => {
-//             $(simonColor).addClass('.active')
-//             setTimeout(() => {
-
-//             },500)
-//             $(simonColor).removeClass('.active')
-//         }
-//         // need a function to log the users input
-//         logSimon()
-//     // }   
-// })
-//     // needs to start on the click of the Start button, => .startButton
-//     // $(".startButton").click( () => {
-//     //     console.log('clicked registered') 
-//     //     logSimon()
-        
-//     // })
-
-
-
-
-
- 
-
-// // check it to Simons if wrong game over
-
-
 
